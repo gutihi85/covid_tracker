@@ -15,9 +15,9 @@ function getApi() {
       localStorage.setItem("newsData", JSON.stringify(newsData));
     });
 
- var countryCasesUrl = `https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=true`;
+ var globalCasesUrl = `https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=true`;
 
-   fetch(countryCasesUrl)
+   fetch(globalCasesUrl)
     .then(function (response2) {
       return response2.json();
     })
@@ -38,6 +38,11 @@ function getApi() {
       console.log(countryData)
       localStorage.setItem("countryData", JSON.stringify(countryData));
     });
+
+    // read local storage
+    // show local storage on the page
+    // onclick execute the function
+    //  save info in localstorage
 
 
     };
