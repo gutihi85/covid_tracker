@@ -26,7 +26,7 @@ App for to keep users informed of Covid statistics and news, globally and per co
 ​
 ## TASKS PREVIEW
 ​
-![(Tasks preview:)](./tasks.png)
+![(Tasks preview:)](./img/tasks.png)
 ​
 ## WIREFRAME
 ​
