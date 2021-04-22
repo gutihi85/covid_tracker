@@ -11,8 +11,9 @@ function getApi() {
     })
     .then(function (newsData) {
       // sanity check
-      console.log(newsData)});
- 
+      console.log(newsData)
+      localStorage.setItem("newsData", JSON.stringify(newsData));
+    });
 
  var countryCasesUrl = `https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=true`;
 
@@ -22,9 +23,9 @@ function getApi() {
     })
     .then(function (globalData) {
       // sanity check
-      console.log(globalData)});
-      
-      localStorage.setItem("newsData", JSON.stringify(newsData));
+      console.log(globalData)
+      localStorage.setItem("globalData", JSON.stringify(globalData));
+    });
 
  var countryCasesUrl = `https://disease.sh/v3/covid-19/countries?yesterday=true&twoDaysAgo=false&sort=cases&allowNull=true`;
 
@@ -34,9 +35,10 @@ function getApi() {
     })
     .then(function (countryData) {
       // sanity check
-      console.log(countryData)});
+      console.log(countryData)
+      localStorage.setItem("countryData", JSON.stringify(countryData));
+    });
 
-      
 
     };
     
