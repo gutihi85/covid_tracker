@@ -7,7 +7,66 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1 class="font-italic top-bar stacked-for-medium">Covid tracker</h1>
+    </header>
+    <main>        
+        <section class="grid-x grid-padding-x align-spaced">
+            <article class="grid-y width-25 height-50 padding-1 radius bordered shadow">
+                <div class="text-center">INFECTED</div>
+                <div class="text-center" id="totalInfected-global">1,243,890</div>
+                <div class="text-center" id="todayInfected-global">1,243,890</div>
+            </article>
+            <article class="grid-y width-25 height-50 padding-1 radius bordered shadow">
+                <div class="text-center">RECOVERED</div>
+                <div class="text-center" id="totalRecovered-global">1,243,890</div>
+                <div class="text-center" id="todayRecovered-global">1,243,890</div>
+            </article>
+            <article class="grid-y width-25 height-50 padding-1 radius bordered shadow">
+                <div class="text-center">DEATHS</div>
+                <div class="text-center" id="totalDeaths-global">1,243,890</div>
+                <div class="text-center" id="todayDeaths-global">1,243,890</div>                
+            </article>
+        </section>
+        <section>
+            <form>
+                <input type="text" placeholder="Enter country" />
+                <button type="submit"></button>
+            </form>
+            <div>
+                <div>Mexico</div>
+            </div>
+        </section>
+        <section>
+            <div>Mexico</div>
+            <article>
+                <div>
+                    <div>INFECTED</div>
+                    <div id="totalInfected-country">1,243,890</div>
+                    <div id="todayInfected-country">1,243,890</div>
+                </div>
+                <div>
+                    <div>RECOVERED</div>
+                    <div id="totalInfected-country">1,243,890</div>
+                    <div id="todayInfected-country">1,243,890</div>
+                </div>
+                <div>
+                    <div>DEATHS</div>
+                    <div id="totalInfected-country">1,243,890</div>
+                    <div id="todayInfected-country">1,243,890</div>
+                </div>
+            </article>
+            <article>
+                <h2>NEWS</h2>
+                <div id="newsHolder">
+                    <a>
+                        <h3>Title</h3>
+                        <h4>Date</h4>
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
     <script type="text/javascript" src="./assets/js/script.js"></script>
-</body>
+</body>    
 </html>
