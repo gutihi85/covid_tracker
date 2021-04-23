@@ -1,23 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,200&display=swap">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css"
+      integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4="
+      crossorigin="anonymous"
+    />
+    <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css"
+      integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok="
+      crossorigin="anonymous"
+    />
+    <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css"
+      integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE="
+      crossorigin="anonymous"
+    />
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,200&display=swap"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Covid Tracker</title>
-</head>
-<body>
+  </head>
+  
+  <body>
+
     <header>
-        <h1>Covid tracker</h1>
+      <h1>Covid tracker</h1>
     </header>
-    <main>
-        
-    </main>
+
+    <main>        
+        <section>
+            <article>
+                <h2></h2>
+                <div id="totalInfected-global" ></div>
+                <div id="todayInfected-global"></div>
+            </article>
+
+            <article>
+                <h2></h2>
+                <div id="totalRecovered-global" ></div>
+                <div id="todayRecovered-global"></div>
+            </article>
+
+            <article>
+                <h2></h2>
+                <div id="totalDeaths-global" ></div>
+                <div id="todayDeaths-global"></div>                
+            </article>
+        </section>
+
+        <section>
+            <form>
+                <input type="text">
+                <button type="submit"></button>
+            </form>
+            <div >
+                <div>Country1</div>
+            </div>
+        </section>
+
+        <section>
     
-</body>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="./script.js"></script>
+        </section>
+
+    </main>
+
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./script.js"></script>
 </html>
