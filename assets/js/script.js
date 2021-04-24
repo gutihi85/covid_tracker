@@ -1,5 +1,22 @@
 var totalInfectedGlobal = document.getElementById("totalInfected-global")
+var todayInfectedGlobal = document.getElementById("todayInfected-global")
+var totalRecoveredGlobal = document.getElementById("totalRecovered-global")
+var todayRecoveredGlobal = document.getElementById("todayRecovered-global")
+var totalDeathsGlobal = document.getElementById("totalDeaths-global")
+var todayDeathsGlobal = document.getElementById("todayDeaths-global")
+var totalInfectedCountry = document.getElementById("totalInfected-country")
+var todayInfectedCountry = document.getElementById("todayInfected-country")
+var totalRecoveredCountry = document.getElementById("totalRecovered-country")
+var todayRecoveredCountry = document.getElementById("todayRecovered-country")
+var totalDeathsCountry = document.getElementById("totalDeaths-country")
+var todayDeathsCountry = document.getElementById("todayDeaths-country")
+var countrySearchName = document.getElementById("countrySearchName")
+
 var newsHolder = document.getElementById("newsHolder")
+
+var country = ""
+var countrySearch = document.getElementById("countrySearch")
+var countryInput
 
 function getApi() {
 
@@ -46,13 +63,18 @@ function getApi() {
       // sanity check
       console.log(globalData)
     var cases = globalData.cases;
-    totalInfectedGlobal.textContent = cases;
+    totalInfectedGlobal.textContent = cases.toLocaleString("en-US");
     var deaths = globalData.deaths;
+    totalDeathsGlobal.textContent = deaths.toLocaleString("en-US");
     var recovered = globalData.recovered;
+    totalRecoveredGlobal.textContent = recovered.toLocaleString("en-US");
     var todayCases = globalData.todayCases;
+    todayInfectedGlobal.textContent = todayCases.toLocaleString("en-US");
     var todayDeaths = globalData.todayDeaths;
+    todayDeathsGlobal.textContent = todayDeaths.toLocaleString("en-US");
     var todayRecovered = globalData.todayRecovered;
-    console.log(cases)
+    todayRecoveredGlobal.textContent = todayRecovered.toLocaleString("en-US");
+    console.log(cases.toLocaleString("en-US"))
     console.log(deaths)
     console.log(recovered)
     console.log(todayCases)
@@ -60,7 +82,8 @@ function getApi() {
     console.log(todayRecovered)
     });
 
- var countryCasesUrl = `https://disease.sh/v3/covid-19/countries/mexico?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true`;
+    countryInput = countrySearch.children[0].value.toLowerCase()
+ var countryCasesUrl = "https://disease.sh/v3/covid-19/countries/"+countryInput+"?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true";
 
    fetch(countryCasesUrl)
     .then(function (response3) {
@@ -101,6 +124,58 @@ function getApi() {
     
 
 getApi()
+
+countrySearch.addEventListener("submit",function(event){
+    event.preventDefault()
+    console.log(countrySearch.children[0].value.toLowerCase())
+    countryInput = countrySearch.children[0].value.toLowerCase()
+    var countryCasesUrl = "https://disease.sh/v3/covid-19/countries/"+countryInput+"?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true";
+
+   fetch(countryCasesUrl)
+    .then(function (response3) {
+      return response3.json();
+    })
+    .then(function (countryData) {
+      // sanity check
+      console.log(countryData)
+
+      var countryCases = countryData.cases;
+      totalInfectedCountry.textContent = countryCases.toLocaleString("en-US");
+      var countryDeaths = countryData.deaths;
+      totalDeathsCountry.textContent = countryDeaths.toLocaleString("en-US");
+      var countryRecovered = countryData.recovered;
+      totalRecoveredCountry.textContent = countryRecovered.toLocaleString("en-US");
+      var countryTodayCases = countryData.todayCases;
+      if (countryData.todayCases === null){
+       todayInfectedCountry.textContent = "Not Reported";
+      } else{
+       todayInfectedCountry.textContent = countryTodayCases.toLocaleString("en-US");
+      }
+      var countryTodayDeaths = countryData.todayDeaths;
+      if (countryData.todayDeaths === null){
+        todayDeathsCountry.textContent = "Not Reported";
+       } else{
+        todayDeathsCountry.textContent = countryTodayDeaths.toLocaleString("en-US");
+       }
+      var countryTodayRecovered = countryData.todayRecovered;
+      if (countryData.todayRecovered === null){
+        todayRecoveredCountry.textContent = "Not Reported";
+       } else{
+        todayRecoveredCountry.textContent = countryTodayRecovered.toLocaleString("en-US");
+       }
+      console.log(countryCases)
+      console.log(countryDeaths)
+      console.log(countryRecovered)
+      console.log(countryTodayCases)
+      console.log(countryTodayDeaths)
+      console.log(countryTodayRecovered)
+
+    });
+
+   
+}); 
+
+
 
 // function init() {
 //     var citySearchs = JSON.parse(localStorage.getItem("citySearchs"));
