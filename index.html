@@ -1,23 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,200&display=swap">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css"
+      integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4="
+      crossorigin="anonymous"
+    />
+    <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css"
+      integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok="
+      crossorigin="anonymous"
+    />
+    <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css"
+      integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE="
+      crossorigin="anonymous"
+    />
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
     <title>Covid Tracker</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <h1>Covid tracker</h1>
+      <h1 class="top-bar stacked-for-medium">Covid tracker</h1>
     </header>
     <main>
-        
+      <section class="grid-x grid-padding-x align-spaced margin-1">
+        <article
+          class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+        >
+          <div class="text-center">GLOBAL INFECTED</div>
+          <div class="grid-x">
+            <div>Total:</div>
+            <div class="text-center flex-child-grow" id="totalInfected-global">
+              1,243,890
+            </div>
+          </div>
+          <div class="grid-x">
+            <div>Today:</div>
+            <div class="text-center flex-child-grow" id="todayInfected-global">
+              1,243,890
+            </div>
+          </div>
+        </article>
+        <article
+          class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+        >
+          <div class="text-center">GLOBAL RECOVERED</div>
+          <div class="grid-x">
+            <div>Total:</div>
+            <div class="text-center flex-child-grow" id="totalInfected-global">
+              1,243,890
+            </div>
+          </div>
+          <div class="grid-x">
+            <div>Today:</div>
+            <div class="text-center flex-child-grow" id="todayInfected-global">
+              1,243,890
+            </div>
+          </div>
+        </article>
+        <article
+          class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+        >
+          <div class="text-center">GLOBAL DEATHS</div>
+          <div class="grid-x">
+            <div>Total:</div>
+            <div class="text-center flex-child-grow" id="totalInfected-global">
+              1,243,890
+            </div>
+          </div>
+          <div class="grid-x">
+            <div>Today:</div>
+            <div class="text-center flex-child-grow" id="todayInfected-global">
+              1,243,890
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="grid-y grid-padding-y">
+        <div class="grid-x align-center">
+          <form
+            class="flex-container align-center bordered rounded column large-4 medium-10 small-10"
+          >
+            <input
+              type="text"
+              placeholder="Enter country"
+              class="margin-0 padding-left-1 border-none rounded outline-none"
+            />
+            <button><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <div class="flex-container overflow-x-visible">
+          <div class="bordered rounded margin-1 padding-horizontal-1">
+            Mexico
+          </div>
+        </div>
+      </section>
+      <section
+        class="flex-container flex-dir-column padding-left-1 padding-right-1"
+      >
+        <h2 class="text-center">Mexico</h2>
+        <section class="grid-x grid-padding-x align-spaced margin-1">
+          <article
+            class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+          >
+            <div class="text-center">INFECTED</div>
+            <div class="grid-x">
+              <div>Total:</div>
+              <div
+                class="text-center flex-child-grow"
+                id="totalInfected-global"
+              >
+                1,243,890
+              </div>
+            </div>
+            <div class="grid-x">
+              <div>Today:</div>
+              <div
+                class="text-center flex-child-grow"
+                id="todayInfected-global"
+              >
+                1,243,890
+              </div>
+            </div>
+          </article>
+          <article
+            class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+          >
+            <div class="text-center">RECOVERED</div>
+            <div class="grid-x">
+              <div>Total:</div>
+              <div
+                class="text-center flex-child-grow"
+                id="totalRecovered-global"
+              >
+                1,243,890
+              </div>
+            </div>
+            <div class="grid-x">
+              <div>Today:</div>
+              <div
+                class="text-center flex-child-grow"
+                id="todayRecovered-global"
+              >
+                1,243,890
+              </div>
+            </div>
+          </article>
+          <article
+            class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+          >
+            <div class="text-center">DEATHS</div>
+            <div class="grid-x">
+              <div>Total:</div>
+              <div class="text-center flex-child-grow" id="totalDeaths-global">
+                1,243,890
+              </div>
+            </div>
+            <div class="grid-x">
+              <div>Today:</div>
+              <div class="text-center flex-child-grow" id="todayDeaths-global">
+                1,243,890
+              </div>
+            </div>
+          </article>
+        </section>
+        <section>
+          <article
+            id="newsHolder"
+            class="grid-x Secondary align-spaced padding-1"
+          >
+            <!-- columns medium-4 -->
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+            <a
+              class="button round secondary column large-3 margin-horizontal-1"
+              target="_blank"
+              href="https://github.com/"
+            >
+              titulo de noticia completa
+              <div>fecha noticia1</div>
+            </a>
+          </article>
+        </section>
+      </section>
     </main>
-    
-</body>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="./script.js"></script>
+  </body>
+
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+  <script src="./script.js"></script>
 </html>
