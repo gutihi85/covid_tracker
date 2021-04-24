@@ -21,11 +21,9 @@ let searchedCountryName = document.getElementById("searchedCountryName");
 
 function retrieveGlobalCases(){
     var globalCasesUrl = `https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=true`;
-    fetch(globalCasesUrl)
-    .then(function (response2) {
+    fetch(globalCasesUrl).then(function (response2) {
         return response2.json();
-    })
-    .then(function (globalData) {
+    }).then(function (globalData) {
         putGlobalCases(globalData);
     }).catch(error => {
         alert(error)
@@ -62,7 +60,7 @@ countrySearch.addEventListener("submit",function(event){
     });
 });
 
-function getCountryCases(countryData){
+function getCountryCases(countryData, countryInput){
     var countryCases = countryData.cases;
     var countryDeaths = countryData.deaths;
     var countryRecovered = countryData.recovered;
