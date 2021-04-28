@@ -27,18 +27,14 @@ h6 {
 .title {
   /* text-shadow: 2px 2px 4px #316991; */
   color: var(--brightblue);
-  background: -webkit-linear-gradient(var(--brightblue), #3d80aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  /* background: -webkit-linear-gradient(var(--brightblue), #3d80aa); */
+  /* font-weight: bold; */
   
 }
 .subtitle {
   color: var(--brightblue);
-  background: -webkit-linear-gradient(var(--brightblue), #448ebd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  /* background: -webkit-linear-gradient(var(--brightblue), #448ebd); */
+  /* font-weight: bold; */
 }
 .info {
   color: var(--grey);
