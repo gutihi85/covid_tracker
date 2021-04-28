@@ -21,6 +21,12 @@ let searchedCountryName = document.getElementById("searchedCountryName");
 var savedCountries = JSON.parse(localStorage.getItem('savedCountries')) || [];
 var countryTag = document.getElementById('countryTag');
 var flag = true;
+var time = document.getElementById("curentTime");
+var newsTitle = document.getElementById("newsTitle");
+var today = moment();
+var schedulerData = [];
+var schedulerObj;
+
 countryTag.addEventListener('click', function(event){
     var target = event.target;
     // console.log(target);
@@ -61,6 +67,7 @@ countrySearch.addEventListener("submit",function(event){
     searchCountryCovidDetails(countryInput,flag);
     countrySearch.children[0].value = "";
 });
+
 function searchCountryCovidDetails(countryInput,flag){
     var countryCasesUrl = `${baseURL}${countryInput}?yesterday=false&twoDaysAgo=false&strict=true&allowNull=true`
     fetch(countryCasesUrl).then(function (response3) {
@@ -115,15 +122,16 @@ function getCountryNews(countryInput){
 }
 function insertCovidNews(newsData){
     var aElement = "";
+    newsTitle.innerHTML = "NEWS:";
     newsHolder.innerHTML = "";
     for (var i = 0; i < newsData.response.results.length - 1; i++){
-        var date = newsData.response.results[i].webTitle + newsData.response.results[i].webPublicationDate;
+        var date = newsData.response.results[i].webPublicationDate;
         var title = newsData.response.results[i].webTitle;
         var newsUrl = newsData.response.results[i].webUrl;
         aElement += `
-            <a class="button round secondary column large-3 margin-horizontal-1" target="_blank" id="news-background" href="${newsUrl}">
+            <a class="font-bold button round secondary column large-3 margin-1" target="_blank" id="news-background" href="${newsUrl}">
                 ${title}
-                <div>${date}</div>
+                <div class="margin-top-1">${date}</div>
             </a>
         `
     }
@@ -134,16 +142,27 @@ function toLocalStorage(countryInput){
     localStorage.setItem('savedCountries',JSON.stringify(savedCountries));
     setCountryTag();
 };
+
 function setCountryTag(){
     var countryTagElement = "";
     for(var i = 0; i < savedCountries.length; i++){
        countryTagElement += `
-       <button class="bordered rounded margin-1 padding-horizontal-1" id="button-background">
+       <button class="bordered rounded margin-1 padding-1" id="button-background">
            ${savedCountries[i]}
        </button>
         `
     };
     countryTag.innerHTML = countryTagElement;
 };
+
+function currentTime() {
+    time.textContent = today.format("dddd, MMMM Do YYYY, h:mm:ss");
+    setInterval(() => {
+      today = moment();
+      time.textContent = today.format("dddd, MMMM Do YYYY, h:mm:ss");
+    }, 1000);
+  }
+
+currentTime();
 retrieveGlobalCases();
 setCountryTag();

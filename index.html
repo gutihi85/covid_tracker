@@ -45,8 +45,9 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="top-bar stacked-for-medium title" id="headerbckgr" >COVID TRACKER</h1>
+    <header class="grid-x grid-padding-x align-center bordered shadow">
+      <h1 class="title margin-1 cell large-12 grid-x grid-padding-x  align-center">COVID TRACKER</h1>
+      <p class="font-bold title cell large-12 grid-x grid-padding-x  align-center" id="curentTime"></p>
     </header>
     <main>
       <section class="grid-x grid-padding-x align-spaced margin-1">
@@ -191,11 +192,11 @@
           </article>
         </section>
         <section>
+          <h2 id="newsTitle" class="text-center title margin-top-1"></h2>
           <article
             id="newsHolder"
             class="grid-x Secondary align-spaced padding-1"
-          >
-            
+          >            
           </article>
         </section>
       </section>
@@ -208,5 +209,8 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
   <script src="./script.js"></script>
 </html>

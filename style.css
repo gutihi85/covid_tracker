@@ -4,8 +4,11 @@ body {
   background-color: #25274D ;
   --mainblue:#25274D;
   --mediumblue:#29648A; 
-  --brightblue: #2E9CCA;
+  --brightblue: #2b9ccc;
   --grey: #AAABB8;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(to top, #32345e, #7072b8);
 }
 
 h1,
@@ -22,20 +25,30 @@ h6 {
 }
 
 .title {
+  /* text-shadow: 2px 2px 4px #316991; */
   color: var(--brightblue);
+  background: -webkit-linear-gradient(var(--brightblue), #3d80aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  
 }
 .subtitle {
   color: var(--brightblue);
+  background: -webkit-linear-gradient(var(--brightblue), #448ebd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 .info {
   color: var(--grey);
 }
 .bordered{
-  border-color: var(--mainblue);
+  border-color: rgb(100, 100, 100);
 }
 .button-background{
-  background-color: #464866;
+  /* background-color: #464866; */
+  background-image: linear-gradient(to top, #464866, #7073a1);
 }
 #icon{
   color: var(--grey);
@@ -46,7 +59,8 @@ h6 {
   color: var(--grey)
 }
 #news-background{
-  background-color: var(--mediumblue);
+  /* background-color: var(--mediumblue); */
+  background-image: linear-gradient(to top, var(--mediumblue), #377faf);
   color: var(--grey)
 }
 /* #countryTag{
@@ -59,6 +73,15 @@ h6 {
 /* #newsHolder{
   background-color:var(--grey);
 } */
+
+header{
+  /* background-color: #464866; */
+  background-image: linear-gradient(to top, #464866, #60638b);
+}
+
+button{
+  cursor: pointer;
+}
 
 #countryTag{
   overflow: auto;
