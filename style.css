@@ -18,7 +18,7 @@ h6 {
 }
 
 #headerbckgr{
-  background-color: var(--mainblue);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .title {
@@ -33,6 +33,9 @@ h6 {
 }
 .bordered{
   border-color: var(--mainblue);
+}
+.button-background{
+  background-color: #464866;
 }
 #icon{
   color: var(--grey);
