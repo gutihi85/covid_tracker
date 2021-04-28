@@ -1,6 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  background-color: #25274D ;
+  --mainblue:#25274D;
+  --mediumblue:#29648A; 
+  --brightblue: #2E9CCA;
+  --grey: #AAABB8;
 }
 
 h1,
@@ -12,9 +17,44 @@ h6 {
   font-weight: 700;
 }
 
+#headerbckgr{
+  background-color: var(--mainblue);
+}
+
+.title {
+  color: var(--brightblue);
+}
+.subtitle {
+  color: var(--brightblue);
+}
+.info {
+  color: var(--grey);
+}
+.bordered{
+  border-color: var(--mainblue);
+}
+#icon{
+  color: var(--grey)
+}
+#button-background{
+  background-color: #464866;
+  color: var(--grey)
+}
+#news-background{
+  background-color: var(--mediumblue);
+  color: var(--grey)
+}
+/* #countryTag{
+  background-color: #464866;
+} */
+
 @media only screen and (max-width: 417px) {
 }
 
-#newsHolder{
-  background-color: rgb(187, 187, 187);
+/* #newsHolder{
+  background-color:var(--grey);
+} */
+
+#countryTag{
+  overflow: auto;
 }

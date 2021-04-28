@@ -46,21 +46,21 @@
 
   <body>
     <header>
-      <h1 class="top-bar stacked-for-medium">COVID TRACKER</h1>
+      <h1 class="top-bar stacked-for-medium title" id="headerbckgr" >COVID TRACKER</h1>
     </header>
     <main>
       <section class="grid-x grid-padding-x align-spaced margin-1">
         <article
           class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
         >
-          <div class="text-center">GLOBAL INFECTED</div>
-          <div class="grid-x">
+          <div class="text-center subtitle">GLOBAL INFECTED</div>
+          <div class="grid-x info">
             <div>Total:</div>
             <div class="text-center flex-child-grow" id="totalInfected-global">
               --
             </div>
           </div>
-          <div class="grid-x">
+          <div class="grid-x info">
             <div>Today:</div>
             <div class="text-center flex-child-grow" id="todayInfected-global">
               --
@@ -70,14 +70,14 @@
         <article
           class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
         >
-          <div class="text-center">GLOBAL RECOVERED</div>
-          <div class="grid-x">
+          <div class="text-center subtitle">GLOBAL RECOVERED</div>
+          <div class="grid-x info">
             <div>Total:</div>
             <div class="text-center flex-child-grow" id="totalRecovered-global">
               --
             </div>
           </div>
-          <div class="grid-x">
+          <div class="grid-x info">
             <div>Today:</div>
             <div class="text-center flex-child-grow" id="todayRecovered-global">
               --
@@ -85,16 +85,16 @@
           </div>
         </article>
         <article
-          class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+          class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow button-background"
         >
-          <div class="text-center">GLOBAL DEATHS</div>
-          <div class="grid-x">
+          <div class="text-center subtitle">GLOBAL DEATHS</div>
+          <div class="grid-x info">
             <div>Total:</div>
             <div class="text-center flex-child-grow" id="totalDeaths-global">
               --
             </div>
           </div>
-          <div class="grid-x">
+          <div class="grid-x info">
             <div>Today:</div>
             <div class="text-center flex-child-grow" id="todayDeaths-global">
               --
@@ -111,12 +111,12 @@
               type="text"
               placeholder="Enter country"
               class="margin-0 padding-left-1 border-none rounded outline-none"
-            />
-            <button><i class="fas fa-search"></i></button>
+            />s
+            <button><i class="fas fa-search" id="icon"></i></button>
           </form>
         </div>
-        <div class="flex-container overflow-x-visible">
-          <div class="bordered rounded margin-1 padding-horizontal-1">
+        <div id="countryTag" class="flex-container overflow-x-visible">
+          <div class="bordered rounded margin-1 padding-horizontal-1 button-background">
             Mexico
           </div>
         </div>
@@ -124,13 +124,13 @@
       <section
         class="flex-container flex-dir-column padding-left-1 padding-right-1"
       >
-        <h2 id="searchedCountryName" class="text-center">Look for a country!</h2>
+        <h2 id="searchedCountryName" class="text-center title">Look for a country!</h2>
         <section class="grid-x grid-padding-x align-spaced margin-1">
           <article
             class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
           >
-            <div class="text-center">INFECTED</div>
-            <div class="grid-x">
+            <div class="text-center subtitle">INFECTED</div>
+            <div class="grid-x info">
               <div>Total:</div>
               <div
                 class="text-center flex-child-grow"
@@ -139,7 +139,7 @@
                 --
               </div>
             </div>
-            <div class="grid-x">
+            <div class="grid-x info">
               <div>Today:</div>
               <div
                 class="text-center flex-child-grow"
@@ -152,8 +152,8 @@
           <article
             class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
           >
-            <div class="text-center">RECOVERED</div>
-            <div class="grid-x">
+            <div class="text-center subtitle">RECOVERED</div>
+            <div class="grid-x info">
               <div>Total:</div>
               <div
                 class="text-center flex-child-grow"
@@ -162,7 +162,7 @@
                 --
               </div>
             </div>
-            <div class="grid-x">
+            <div class="grid-x info">
               <div>Today:</div>
               <div
                 class="text-center flex-child-grow"
@@ -173,16 +173,16 @@
             </div>
           </article>
           <article
-            class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow"
+            class="grid-y column medium-3 height-50 margin-bottom-1 padding-1 radius bordered shadow border-color"
           >
-            <div class="text-center">DEATHS</div>
-            <div class="grid-x">
+            <div class="text-center subtitle">DEATHS</div>
+            <div class="grid-x info">
               <div>Total:</div>
               <div class="text-center flex-child-grow" id="totalDeaths-country">
                 --
               </div>
             </div>
-            <div class="grid-x">
+            <div class="grid-x info">
               <div>Today:</div>
               <div class="text-center flex-child-grow" id="todayDeaths-country">
                 --
