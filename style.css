@@ -26,6 +26,7 @@ h6 {
 }
 .subtitle {
   color: var(--brightblue);
+  font-weight: bold;
 }
 .info {
   color: var(--grey);
@@ -34,7 +35,8 @@ h6 {
   border-color: var(--mainblue);
 }
 #icon{
-  color: var(--grey)
+  color: var(--grey);
+  margin-left: 10px
 }
 #button-background{
   background-color: #464866;
